@@ -1,10 +1,11 @@
-declare x = 10
-declare y = "Hello"
+declare x = "Hello World"
 displayln(x)
-displayln(y)
-if case x > 5 {
-    displayln("x is greater than 5")
-}
-otherwise {
-    displayln("x is not greater than 5")
+declare w = 10
+declare r = 20
+declare w = 90
+
+if case w<r{
+    displayln("w is bigger")
+}otherwise{
+    displayln("x is bigger")
 }

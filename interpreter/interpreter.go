@@ -8,6 +8,14 @@ import (
 	"ksm/parser"
 )
 
+const (
+	blue    = "\033[34m"
+	reset   = "\033[0m"
+	magenta = "\033[35m"
+	green   = "\033[32m"
+	red     = "\033[31m"
+)
+
 type Interpreter struct {
 	variables map[string]string
 }
@@ -27,28 +35,28 @@ func (i *Interpreter) Interpret(node *parser.Node) error {
 	case parser.NodeVarDecl:
 		parts := strings.Split(node.Literal, "=")
 		if len(parts) != 2 {
-			return fmt.Errorf("invalid variable declaration: %s", node.Literal)
+			return fmt.Errorf(blue+"invalid variable declaration: %s"+reset, node.Literal)
 		}
 		varName := strings.TrimSpace(parts[0])
 		varValue := strings.TrimSpace(parts[1])
 		i.variables[varName] = varValue
-		fmt.Printf("Variable Declaration: %s = %s\n", varName, varValue)
+		fmt.Printf(blue+"Variable Declaration: %s = %s\n"+reset, varName, varValue)
 
 	case parser.NodePrint:
 		value := strings.TrimPrefix(node.Literal, "print ")
-		fmt.Printf("Print Statement: %s\n", i.evaluateExpression(value))
+		fmt.Printf(magenta+"Print Statement: %s\n"+reset, i.evaluateExpression(value))
 
 	case parser.NodeIf:
 		condition := strings.TrimPrefix(node.Literal, "if ")
 		if i.evaluateCondition(condition) {
-			fmt.Println("If Statement (True):", condition)
+			fmt.Println(green+"If Statement (True):"+reset, condition)
 			for _, child := range node.Children {
 				if err := i.Interpret(child); err != nil {
 					return err
 				}
 			}
 		} else {
-			fmt.Println("If Statement (False):", condition)
+			fmt.Println(red+"If Statement (False):"+reset, condition)
 		}
 
 	case parser.NodeOtherwise:
