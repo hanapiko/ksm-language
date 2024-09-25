@@ -1,0 +1,11 @@
+declare x = "Hello World"
+displayln(x)
+declare w = 10
+declare r = 20
+declare w = 90
+
+if case w<r{
+    displayln("w is bigger")
+}otherwise{
+    displayln("x is bigger")
+}
