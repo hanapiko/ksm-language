@@ -1,14 +1,65 @@
-# kisumu
+## KSM Language
 
-# Group members
-    hanapiko
-    kevwasonga
-    somulo
-    krodgers
+KSM Language is a simple, interpreted language implemented in Go. The project includes a lexer, parser, and interpreter that work together to read, understand, and execute code written in the KSM language. It is a great starting point for understanding the components of a programming language.
 
-# Discussion report
-# Go to Kisumu Token Replacements
-To refine our prototype language Kisumu, we have systematically replaced the original Golang tokens and syntax with Kisumu equivalents. This ensures our language maintains a unique identity while providing familiar constructs for users transitioning from Golang. Below is a comprehensive list of these replacements.
+## Project Structure
+
+The KSM language project is composed of three main components:
+
+1. **Lexer**: Responsible for breaking the source code into tokens.
+2. **Parser**: Organizes the tokens into a meaningful structure (Abstract Syntax Tree - AST).
+3. **Interpreter**: Executes the parsed instructions.
+
+### Files:
+
+- `lexer.go`: Contains the lexical analyzer (lexer) that converts the input code into tokens.
+- `parser.go`: Contains the parser that processes the tokens to build an abstract syntax tree (AST).
+- `interpreter.go`: Contains the interpreter that executes the AST.
+- `main.go`: The entry point for running KSM either in REPL mode or by executing a .ksm file.
+
+## Features
+
+- **Basic Syntax**: Supports variable declarations, control structures (like `if` and `case`), basic arithmetic operations, and more.
+- **Tokenization**: Tokenizes keywords, identifiers, numbers, strings, and operators.
+- **Parsing**: Builds a syntax tree from the tokens.
+- **Interpreting**: Executes the parsed code.
+
+## Installation
+```bash
+git clone https://github.com/yourusername/ksm-language.git
+```
+cd ksm-language
+
+## Usage
+- You can run KSM in two ways:
+
+    1. Interactive REPL: Starts an interactive session where you can type KSM code line by line.
+
+```bash
+go run .
+```
+
+    2. Run a File: Executes a .ksm file.
+
+```bash
+go run . core.ksm
+```
+
+## Example on how the program works
+declare x = "Hello World"
+displayln(x)
+
+* Output will be
+. Hello World
+
+## Features
+
+The project supports the following data structures:
+
+    Number: Supports both integers.
+    String: A sequence of characters.
+    Boolean: Represents true and false values.
+
 # Data Types
 
     int -> digit
@@ -24,20 +75,18 @@ To refine our prototype language Kisumu, we have systematically replaced the ori
     main -> core
     if -> if case
     else -> otherwise
-    for -> loop
     switch -> option
     case -> option case
     default -> default case
     return -> return
     break -> exit
-    continue -> next
 
 # Functions and Methods
 
     func -> method
     print -> display
     println -> displayln
-     printf -> displayf
+    printf -> displayf
 
 # Declarations
 
@@ -45,48 +94,14 @@ To refine our prototype language Kisumu, we have systematically replaced the ori
     const -> constant
     type -> define
 
-# Operators(the symbols are  retained and will be used  in our language as defined below)
+## Contributors
+- [hanapiko](https://github.com/hanapiko)
+- [Kevwasonga](https://github.com/kevwasonga)
+- [krodgers](https://github.com/karodgers)
+- [Somulo](https://github.com/samuelomulo)
 
-    + -> add
-    - -> subtract
-    * -> multiply
-    / -> divide
-    = -> assign
-    == -> equals
-    != -> not equals
-    > -> greater than
-    < -> less than
-    >= -> greater or equal
-    <= -> less or equal
-    && -> and
-    || -> or
-    ! -> not
-    ++ -> increment
-    -- -> decrement
-    += -> add assign
-    -= -> subtract assign
-    *= -> multiply assign
-    /= -> divide assign
-    % -> modulus
 
-# Error Handling
 
-    error -> mistake
-    panic -> crisis
 
-# Miscellaneous
-    package -> pack
-    import -> bring
-    defer -> delay
-    select -> choose
-    chan -> channel
-    interface -> face
-    struct -> structure
-    map -> mapping
-    range -> iterate
 
-# Problems encountered
-
-1. Token Consistency: Ensuring all instances of Golang tokens are correctly and uniformly replaced with Kisumu equivalents.
-2. Syntax and Semantics: Maintaining the intended meaning and functionality of language constructs while changing their names.
 
