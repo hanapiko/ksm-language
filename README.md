@@ -15,6 +15,7 @@ The KSM language project is composed of three main components:
 - `lexer.go`: Contains the lexical analyzer (lexer) that converts the input code into tokens.
 - `parser.go`: Contains the parser that processes the tokens to build an abstract syntax tree (AST).
 - `interpreter.go`: Contains the interpreter that executes the AST.
+- `main.go`: The entry point for running KSM either in REPL mode or by executing a .ksm file.
 
 ## Features
 
@@ -30,10 +31,19 @@ git clone https://github.com/yourusername/ksm-language.git
 cd ksm-language
 
 ## Usage
-You can run ksm language by passing a .ksm file as input to the interpreter
+- You can run KSM in two ways:
+
+    1. Interactive REPL: Starts an interactive session where you can type KSM code line by line.
+
 ```bash
- go run . core.ksm
- ```
+go run .
+```
+
+    2. Run a File: Executes a .ksm file.
+
+```bash
+go run . core.ksm
+```
 
 ## Example on how the program works
 declare x = "Hello World"
@@ -83,6 +93,13 @@ The project supports the following data structures:
     var -> declare
     const -> constant
     type -> define
+
+## Contributors
+- [hanapiko](https://github.com/hanapiko)
+- [Kevwasonga](https://github.com/kevwasonga)
+- [krodgers](https://github.com/karodgers)
+- [Somulo](https://github.com/samuelomulo)
+
 
 
 
